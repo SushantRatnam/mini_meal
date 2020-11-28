@@ -92,9 +92,9 @@ class _MyAppState extends State<MyApp> {
       // home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => TabsScreen(),
+        '/': (ctx) => TabsScreen(_favoriteMeals),
         CategoryDetail.routeName: (ctx) => CategoryDetail(_availableMeals),
-        MealDetail.routeName: (ctx) => MealDetail(),
+        MealDetail.routeName: (ctx) => MealDetail(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },
       onUnknownRoute: (settings) {
